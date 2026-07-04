@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>IXSAYZ Inventory</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/app.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">IX</div>
+        <div>
+          <h1>IXSAYZ</h1>
+          <p id="subtitle">Склад • Завозы • Ценники</p>
+        </div>
+      </div>
+      <button class="iconBtn" id="backupBtn" title="Экспорт JSON">⇩</button>
+    </header>
+
+    <main id="screen" class="screen"></main>
+
+    <nav class="tabbar">
+      <button data-go="home" class="tab active">🏠<span>Главная</span></button>
+      <button data-go="arrivals" class="tab">📦<span>Завозы</span></button>
+      <button data-go="warehouse" class="tab">🏬<span>Склад</span></button>
+      <button data-go="labels" class="tab">🏷<span>Печать</span></button>
+      <button data-go="reports" class="tab">📊<span>Отчёты</span></button>
+    </nav>
+  </div>
+
+  <div id="modal" class="modal hidden"><div class="modalBox"><div id="modalContent"></div></div></div>
+  <input id="fileImport" type="file" accept=".json,.csv" hidden />
+</body>
+</html>
